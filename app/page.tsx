@@ -1,18 +1,8 @@
-import React from 'react';
+import React from "react";
 
 export default function Page() {
   return (
-    <div>
-      <nav>
-        <ul>
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-
+    <div className="flex flex-col m-5">
       {/* Hero Section */}
       <section id="hero">
         <h1>Welcome to [Your Agency Name]</h1>
@@ -44,13 +34,16 @@ export default function Page() {
         <h2>Contact Us</h2>
         <form action="your_server_endpoint" method="POST">
           <label htmlFor="name">Name:</label>
-          <input type="text" id="name" name="name" required /><br />
+          <input type="text" id="name" name="name" required />
+          <br />
 
           <label htmlFor="email">Email:</label>
-          <input type="email" id="email" name="email" required /><br />
+          <input type="email" id="email" name="email" required />
+          <br />
 
           <label htmlFor="message">Message:</label>
-          <textarea id="message" name="message" required></textarea><br />
+          <textarea id="message" name="message" required></textarea>
+          <br />
 
           <input type="submit" value="Send Message" />
         </form>
