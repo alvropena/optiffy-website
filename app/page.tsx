@@ -1,12 +1,8 @@
-"use client"
+"use client";
+import ContactForm from "@/components/contactForm";
 import React from "react";
-import * as z from 'zod'
-  
-export default function Page() {
-  const formSchema = z.object({
-    username: z.string().min(2).max(50)
-  })
 
+export default function Page() {
   return (
     <div className="flex flex-col m-5">
       {/* Hero Section */}
@@ -38,7 +34,7 @@ export default function Page() {
       {/* Contact Form Section */}
       <section id="contact">
         <h2>Contact Us</h2>
-        <form action="your_server_endpoint" method="POST">
+        {/* <form action="your_server_endpoint" method="POST">
           <label htmlFor="name">Name:</label>
           <input type="text" id="name" name="name" required />
           <br />
@@ -52,7 +48,8 @@ export default function Page() {
           <br />
 
           <input type="submit" value="Send Message" />
-        </form>
+        </form> */}
+        <ContactForm />
       </section>
     </div>
   );
