@@ -1,6 +1,12 @@
+"use client"
 import React from "react";
-
+import * as z from 'zod'
+  
 export default function Page() {
+  const formSchema = z.object({
+    username: z.string().min(2).max(50)
+  })
+
   return (
     <div className="flex flex-col m-5">
       {/* Hero Section */}
