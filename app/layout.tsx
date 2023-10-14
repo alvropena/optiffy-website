@@ -2,6 +2,8 @@ import Navbar from "@/components/navbar";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Link from "next/link";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,17 +18,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <Navbar />
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+          {children}
+        </ThemeProvider>
       </body>
-      <footer>
-        <p>
-          &copy; 2023 Your Agency Name |{" "}
-          <a href="privacy-policy.html">Privacy Policy</a> |{" "}
-          <a href="terms.html">Terms of Service</a>
-        </p>
+      <footer className="flex flex-col m-5 gap-3">
+        <div className="flex flex-row gap-3">
+          <Link href="/terms">Terms</Link>
+          <Link href="/privacy-policy">Privacy</Link>
+          <Link href="/privacy-policy">Privacy</Link>
+        </div>
+        <p className="text-gray-500">&copy; 2023 Optiffy Inc. All rights reserved.</p>
+        <div></div>
       </footer>
     </html>
   );
