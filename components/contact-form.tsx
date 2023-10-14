@@ -34,36 +34,36 @@ export default function ContactForm() {
     },
   });
 
-  function onSubmit(values) {
-    // Send a POST request to your API route
-    fetch("/api/sendEmail", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(values),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.status === "Email sent") {
-          toast({
-            title: "Form Submitted",
-            description: "Thanks for your message. We will be in touch soon.",
-          });
-        } else {
-          toast({
-            title: "Error",
-            description: "Something went wrong. Please try again later.",
-          });
-        }
-      })
-      .catch((error) => {
-        toast({
-          title: "Error",
-          description: "An error occurred. Please try again later.",
-        });
-      });
-  }
+  // function onSubmit(values) {
+  //   // Send a POST request to your API route
+  //   fetch("/api/sendEmail", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(values),
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       if (data.status === "Email sent") {
+  //         toast({
+  //           title: "Form Submitted",
+  //           description: "Thanks for your message. We will be in touch soon.",
+  //         });
+  //       } else {
+  //         toast({
+  //           title: "Error",
+  //           description: "Something went wrong. Please try again later.",
+  //         });
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       toast({
+  //         title: "Error",
+  //         description: "An error occurred. Please try again later.",
+  //       });
+  //     });
+  // }
 
   const { toast } = useToast();
 
