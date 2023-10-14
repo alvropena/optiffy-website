@@ -27,7 +27,7 @@ export default function Navbar() {
         </Link>
       </div>
       <div className="flex flex-row justify-between gap-3">
-        <Button variant={"outline"} className="hidden sm:inline-flex">
+        <Button variant={"outline"} >
           Contact Us
         </Button>
         <ModeToggle />
